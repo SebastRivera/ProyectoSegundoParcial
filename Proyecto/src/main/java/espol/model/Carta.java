@@ -2,7 +2,8 @@ package espol.model;
 public class Carta {
     private String imgPath; //ubicacion de la img de la carta
     private String denominacion; //trebol, diamante, picas, corazon
-    private int valor; //valor de la carta 
+    private int valor; //valor de la carta
+    private int hola;
     
     public Carta(String path, String deno, int valor){
         imgPath = path;
