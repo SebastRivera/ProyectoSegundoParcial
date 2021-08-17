@@ -15,9 +15,9 @@ public class ReportesPartidasController {
 
     @FXML
     void switchToMenu(ActionEvent event) throws IOException{
-        App.setRoot("MenuPrincipal");
+        App.switchScenes(event, "MenuPrincipal", 600, 400);
     }
-    
+
     @FXML
     private void initialize(){
         ArrayList<String> opciones = new ArrayList<>(Arrays.asList("FECHA","PUNTAJE","NOMBRE"));
