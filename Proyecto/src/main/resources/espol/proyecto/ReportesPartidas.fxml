@@ -71,7 +71,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Steal the Pile" />
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Cartafondo.png" />
+                  <Image url="@../../images/Cartafondo.png" />
                </image>
             </ImageView>
          </children>

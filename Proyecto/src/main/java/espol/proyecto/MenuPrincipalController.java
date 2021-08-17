@@ -26,5 +26,15 @@ public class MenuPrincipalController {
         App.switchScenes(event, "ReportesPartidas", 900, 500);
     }
     
+    @FXML
+    void switchToPartida(ActionEvent event) throws IOException{
+        App.switchScenes(event, "MesaJuego", 900, 600);
+    }
+    
+    @FXML
+    void switchToAjustes(ActionEvent event) throws IOException{
+        App.switchScenes(event, "Ajustes", 600, 500);
+    } 
+    
 
 }

@@ -34,12 +34,12 @@
             </BorderPane>
             <VBox alignment="TOP_CENTER" prefHeight="282.0" prefWidth="157.0" spacing="50.0">
                <children>
-                  <Button alignment="CENTER" lineSpacing="12.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #5E7CEC;" text="Nueva Partida" textAlignment="CENTER" textFill="WHITE">
+                  <Button alignment="CENTER" lineSpacing="12.0" mnemonicParsing="false" onAction="#switchToPartida" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #5E7CEC;" text="Nueva Partida" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Vladimir Script" size="13.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #5E7CEC;" text="Ajustes" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#switchToAjustes" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #5E7CEC;" text="Ajustes" textFill="WHITE">
                      <font>
                         <Font size="13.0" />
                      </font>
