@@ -5,6 +5,8 @@
  */
 package espol.proyecto;
 
+import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
@@ -12,7 +14,8 @@ import javafx.scene.text.Text;
  *
  * @author Administrador
  */
-public class MesaJuegoController {@FXML
+public class MesaJuegoController {
+    @FXML
     Text textNumeros;
     
     @FXML
@@ -22,6 +25,12 @@ public class MesaJuegoController {@FXML
         hiloCuenta.setDaemon(true);
         hiloCuenta.start();
     }
+    
+    @FXML
+    void switchToMenu(ActionEvent event) throws IOException{
+        App.switchScenes(event, "MenuPrincipal", 600, 400);
+    }
+    
     
     class IncrementaCuenta implements Runnable {
 

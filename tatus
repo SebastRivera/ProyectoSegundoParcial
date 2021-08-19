@@ -1,0 +1,113 @@
+warning: LF will be replaced by CRLF in Proyecto/src/main/resources/espol/proyecto/MesaJuego.fxml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in Proyecto/target/classes/espol/proyecto/MesaJuego.fxml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in Proyecto/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst.
+The file will have its original line endings in your working directory
+[1mdiff --git a/Proyecto/src/main/java/espol/proyecto/MesaJuegoController.java b/Proyecto/src/main/java/espol/proyecto/MesaJuegoController.java[m
+[1mindex f5bc79e..ef69589 100644[m
+[1m--- a/Proyecto/src/main/java/espol/proyecto/MesaJuegoController.java[m
+[1m+++ b/Proyecto/src/main/java/espol/proyecto/MesaJuegoController.java[m
+[36m@@ -5,6 +5,8 @@[m
+  */[m
+ package espol.proyecto;[m
+ [m
+[32m+[m[32mimport java.io.IOException;[m
+[32m+[m[32mimport javafx.event.ActionEvent;[m
+ import javafx.fxml.FXML;[m
+ import javafx.scene.text.Text;[m
+ [m
+[36m@@ -12,7 +14,8 @@[m [mimport javafx.scene.text.Text;[m
+  *[m
+  * @author Administrador[m
+  */[m
+[31m-public class MesaJuegoController {@FXML[m
+[32m+[m[32mpublic class MesaJuegoController {[m
+[32m+[m[32m    @FXML[m
+     Text textNumeros;[m
+     [m
+     @FXML[m
+[36m@@ -23,6 +26,12 @@[m [mpublic class MesaJuegoController {@FXML[m
+         hiloCuenta.start();[m
+     }[m
+     [m
+[32m+[m[32m    @FXML[m
+[32m+[m[32m    void switchToMenu(ActionEvent event) throws IOException{[m
+[32m+[m[32m        App.switchScenes(event, "MenuPrincipal", 600, 400);[m
+[32m+[m[32m    }[m
+[32m+[m[41m    [m
+[32m+[m[41m    [m
+     class IncrementaCuenta implements Runnable {[m
+ [m
+         private int count = 0;[m
+[1mdiff --git a/Proyecto/src/main/resources/espol/proyecto/MesaJuego.fxml b/Proyecto/src/main/resources/espol/proyecto/MesaJuego.fxml[m
+[1mindex 60aa374..9c1a515 100644[m
+[1m--- a/Proyecto/src/main/resources/espol/proyecto/MesaJuego.fxml[m
+[1m+++ b/Proyecto/src/main/resources/espol/proyecto/MesaJuego.fxml[m
+[36m@@ -1,7 +1,7 @@[m
+ <?xml version="1.0" encoding="UTF-8"?>[m
+ [m
+ <?import javafx.geometry.Insets?>[m
+[31m-<?import javafx.scene.control.Pagination?>[m
+[32m+[m[32m<?import javafx.scene.control.Button?>[m
+ <?import javafx.scene.image.Image?>[m
+ <?import javafx.scene.image.ImageView?>[m
+ <?import javafx.scene.layout.HBox?>[m
+[36m@@ -38,7 +38,6 @@[m
+          </image>[m
+       </ImageView>[m
+       <Text fx:id="textNumeros" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />[m
+[31m-      <Pagination pageCount="4" prefHeight="0.0" prefWidth="200.0" />[m
+       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">[m
+          <children>[m
+             <ImageView fx:id="CartaJ1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">[m
+[36m@@ -58,5 +57,6 @@[m
+             </ImageView>[m
+          </children>[m
+       </HBox>[m
+[32m+[m[32m      <Button mnemonicParsing="false" onAction="#switchToMenu" text="Menu Principal" />[m
+    </children>[m
+ </VBox>[m
+[1mdiff --git a/Proyecto/target/classes/espol/model/Jugador.class b/Proyecto/target/classes/espol/model/Jugador.class[m
+[1mindex 7a52958..c958059 100644[m
+Binary files a/Proyecto/target/classes/espol/model/Jugador.class and b/Proyecto/target/classes/espol/model/Jugador.class differ
+[1mdiff --git a/Proyecto/target/classes/espol/proyecto/MesaJuego.fxml b/Proyecto/target/classes/espol/proyecto/MesaJuego.fxml[m
+[1mindex 60aa374..9c1a515 100644[m
+[1m--- a/Proyecto/target/classes/espol/proyecto/MesaJuego.fxml[m
+[1m+++ b/Proyecto/target/classes/espol/proyecto/MesaJuego.fxml[m
+[36m@@ -1,7 +1,7 @@[m
+ <?xml version="1.0" encoding="UTF-8"?>[m
+ [m
+ <?import javafx.geometry.Insets?>[m
+[31m-<?import javafx.scene.control.Pagination?>[m
+[32m+[m[32m<?import javafx.scene.control.Button?>[m
+ <?import javafx.scene.image.Image?>[m
+ <?import javafx.scene.image.ImageView?>[m
+ <?import javafx.scene.layout.HBox?>[m
+[36m@@ -38,7 +38,6 @@[m
+          </image>[m
+       </ImageView>[m
+       <Text fx:id="textNumeros" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />[m
+[31m-      <Pagination pageCount="4" prefHeight="0.0" prefWidth="200.0" />[m
+       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">[m
+          <children>[m
+             <ImageView fx:id="CartaJ1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">[m
+[36m@@ -58,5 +57,6 @@[m
+             </ImageView>[m
+          </children>[m
+       </HBox>[m
+[32m+[m[32m      <Button mnemonicParsing="false" onAction="#switchToMenu" text="Menu Principal" />[m
+    </children>[m
+ </VBox>[m
+[1mdiff --git a/Proyecto/target/classes/espol/proyecto/MesaJuegoController$IncrementaCuenta.class b/Proyecto/target/classes/espol/proyecto/MesaJuegoController$IncrementaCuenta.class[m
+[1mindex 1c3bc0a..fcf1e52 100644[m
+Binary files a/Proyecto/target/classes/espol/proyecto/MesaJuegoController$IncrementaCuenta.class and b/Proyecto/target/classes/espol/proyecto/MesaJuegoController$IncrementaCuenta.class differ
+[1mdiff --git a/Proyecto/target/classes/espol/proyecto/MesaJuegoController.class b/Proyecto/target/classes/espol/proyecto/MesaJuegoController.class[m
+[1mindex 90fc82a..b6aefe9 100644[m
+Binary files a/Proyecto/target/classes/espol/proyecto/MesaJuegoController.class and b/Proyecto/target/classes/espol/proyecto/MesaJuegoController.class differ
+[1mdiff --git a/Proyecto/target/classes/espol/proyecto/ReportesPartidasController.class b/Proyecto/target/classes/espol/proyecto/ReportesPartidasController.class[m
+[1mindex 1ab6004..50c5958 100644[m
+Binary files a/Proyecto/target/classes/espol/proyecto/ReportesPartidasController.class and b/Proyecto/target/classes/espol/proyecto/ReportesPartidasController.class differ
+[1mdiff --git a/Proyecto/target/classes/module-info.class b/Proyecto/target/classes/module-info.class[m
+[1mindex e8c3d32..8332767 100644[m
+Binary files a/Proyecto/target/classes/module-info.class and b/Proyecto/target/classes/module-info.class differ
