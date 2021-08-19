@@ -14,7 +14,7 @@ public class PartidaJugada {
         int tiempo;
         int pilasRobadas;
         
-        
+        /*
         //constructor que sirve para ingresar Jugadores como parametros
         public PartidaJugada (String nombre, Jugador persona, Jugador computadora, int tiempo){
             this.nombre = persona.getNombre();
@@ -31,7 +31,7 @@ public class PartidaJugada {
             //de quien son las pilas robadas o si es en total
             this.pilasRobadas = persona.getCantidadPilas() + computadora.getCantidadPilas();
         }
-        
+        */
         
         //segundo constructor para facilitar la lectura del archivo y no estar creando objetos aparte
         public PartidaJugada (String fecha, String nombre, int puntos, int puntosOponente,int diffPuntos, int tiempo, int pilasRobadas){
@@ -52,7 +52,7 @@ public class PartidaJugada {
         public String getNombre(){return nombre;}
         public int getPuntos(){return puntos;}
         public int getPuntosOponente(){return puntosOponente;}
-        public int getdiffPuntos(){return diffPuntos;}
+        public int getDiffPuntos(){return diffPuntos;}
         public int getTiempo(){return tiempo;}
         public int getPilasRobadas(){return pilasRobadas;}
         
