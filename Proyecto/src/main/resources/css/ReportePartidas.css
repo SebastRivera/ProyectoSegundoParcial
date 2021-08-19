@@ -1,0 +1,5 @@
+
+.root{
+    -fx-background-image:url('../images/FondoVerde.jpg');
+    -fx-background-size:cover;
+}
