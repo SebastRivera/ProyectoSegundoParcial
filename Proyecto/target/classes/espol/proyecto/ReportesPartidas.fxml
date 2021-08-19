@@ -18,15 +18,15 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="411.0" prefWidth="853.0" stylesheets="@../../css/ReportePartidas.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.proyecto.ReportesPartidasController">
    <center>
-      <TableView prefHeight="200.0" prefWidth="783.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="TvReportes" prefHeight="200.0" prefWidth="783.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="fecha" prefWidth="52.0" text="Fecha" />
-          <TableColumn prefWidth="133.0" text="Nombre" />
-            <TableColumn prefWidth="40.0" text="Puntos" />
-            <TableColumn prefWidth="75.0" text="Pts Oponente" />
-            <TableColumn prefWidth="75.0" text="Diff Puntos" />
-            <TableColumn prefWidth="75.0" text="Tiempo" />
-            <TableColumn prefWidth="75.0" text="Pilas Robadas" />
+          <TableColumn fx:id="colFecha" prefWidth="52.0" text="Fecha" />
+          <TableColumn fx:id="colNombre" prefWidth="133.0" text="Nombre" />
+            <TableColumn fx:id="colPuntos" prefWidth="40.0" text="Puntos" />
+            <TableColumn fx:id="colPuntosOponentes" prefWidth="75.0" text="Pts Oponente" />
+            <TableColumn fx:id="colDiffPuntos" prefWidth="75.0" text="Diff Puntos" />
+            <TableColumn fx:id="colTiempo" prefWidth="75.0" text="Tiempo" />
+            <TableColumn fx:id="colPilas" prefWidth="75.0" text="Pilas Robadas" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
