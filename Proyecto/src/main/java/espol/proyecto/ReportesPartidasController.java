@@ -49,11 +49,12 @@ public class ReportesPartidasController {
 
     @FXML
     private void initialize(){
+        /*
         ArrayList<String> opciones = new ArrayList<>(Arrays.asList("FECHA","PUNTAJE","NOMBRE"));
         cmbFilter.setItems(FXCollections.observableArrayList(opciones));
         cmbFilter.setValue(opciones.get(0));     
         System.out.println("Combobox inicializado");
-        
+        */
        
         
         //agregar los datos en las columnas
