@@ -1,5 +1,7 @@
 package espol.proyecto;
 
+import espol.model.Carta;
+
 //JavaFX
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -61,5 +63,9 @@ public class App extends Application {
     }
     public static void main(String[] args) {
         launch();
+        System.out.println(Carta.loadCartasPoker());
+        System.out.println(Carta.loadCartasEspanolas());
+        System.out.println(Carta.loadCartasEspanolasV2());
+        
     }
 }

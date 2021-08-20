@@ -1,0 +1,3 @@
+12/12/12,Eduardo Salavarria,15,12,3,144,2
+12/12/12,Jose Reyes,3,2,1,2,1
+12/12/12,Sebastian Rivera,15,12,3,144,2

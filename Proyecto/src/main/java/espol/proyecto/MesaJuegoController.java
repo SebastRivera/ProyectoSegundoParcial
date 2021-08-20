@@ -31,7 +31,6 @@ public class MesaJuegoController {
         App.switchScenes(event, "MenuPrincipal", 600, 400);
     }
     
-    
     class IncrementaCuenta implements Runnable {
 
         private int count = 0;

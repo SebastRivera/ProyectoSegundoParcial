@@ -34,6 +34,7 @@ public class Jugador {
     
     
     //getters
+    public String getNombre(){return nombre;}
     public int getPuntos(){return puntos;}
     public int getCantidadPilas(){return pilasRobadas;}
     
