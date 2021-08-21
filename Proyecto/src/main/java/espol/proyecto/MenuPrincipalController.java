@@ -28,7 +28,7 @@ public class MenuPrincipalController {
     
     @FXML
     void switchToPartida(ActionEvent event) throws IOException{
-        App.switchScenes(event, "MesaJuego", 900, 600);
+        App.switchScenes(event, "MesaJuego", 1300, 800);
     }
     
     @FXML
