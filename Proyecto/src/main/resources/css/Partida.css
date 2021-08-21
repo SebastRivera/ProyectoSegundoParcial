@@ -1,5 +1,21 @@
 .root{
+    
     -fx-background-image:url('../images/FondoVerde.jpg');
     -fx-background-size:cover;
     -fx-background-color:#39C160;
+    
+}
+
+#temporizador {
+    
+    -fx-border-width: 2;
+    -fx-border-color: rgb(255, 238, 4);
+    -fx-background-color:#1c4628;
+    -fx-border-radius: 10%;
+}
+
+.scene{
+    -fx-border-width: 10;
+    -fx-border-color: rgb(0, 0, 0);
+    -fx-background-color:#000000;
 }

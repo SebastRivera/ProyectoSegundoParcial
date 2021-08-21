@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package espol.proyecto;
 
 import java.io.IOException;
@@ -15,21 +10,28 @@ import javafx.scene.text.Text;
  * @author Administrador
  */
 public class MesaJuegoController {
+    
     @FXML
-    Text textNumeros;
+    private Text textNumeros;
+    
+    
     
     @FXML
     private void initialize() {
         //inicializa hilo que muestra el contador
+        
         Thread hiloCuenta = new Thread(new IncrementaCuenta());
         hiloCuenta.setDaemon(true);
         hiloCuenta.start();
-    }
+      
+    } 
+   
     
     @FXML
     void switchToMenu(ActionEvent event) throws IOException{
         App.switchScenes(event, "MenuPrincipal", 600, 400);
     }
+    
     
     class IncrementaCuenta implements Runnable {
 
@@ -53,5 +55,6 @@ public class MesaJuegoController {
         }
 
     }
+
 
 }
