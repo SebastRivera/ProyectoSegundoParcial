@@ -1,7 +1,6 @@
 package espol.proyecto;
 
 import espol.model.Carta;
-//Eduardo
 //JavaFX
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
