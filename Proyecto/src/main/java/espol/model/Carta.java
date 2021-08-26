@@ -42,7 +42,9 @@ public class Carta {
         ArrayList<Carta> cartasPoker = new ArrayList<>();
         //Carta back = ("src/main/resources/images/Cartas/"++".png") agregar la carta que tiene la parte posterior
         for (int i=1; i<=52; i++){
+           
             String path = "src/main/resources/images/Cartas/"+i+".png";
+            
             if ( i>=1 && i<=13 ){
                 Carta c = new Carta(path, "trebol", i);
                 cartasPoker.add(c);
