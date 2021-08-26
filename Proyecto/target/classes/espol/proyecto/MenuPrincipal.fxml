@@ -39,7 +39,7 @@
                         <Font name="Bodoni MT" size="13.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#switchToAjustes" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #7E2B19;" text="Ajustes" textFill="WHITE">
+                  <Button fx:id="buttonAjustes" mnemonicParsing="false" onAction="#switchToAjustes" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #7E2B19;" text="Ajustes" textFill="WHITE">
                      <font>
                         <Font name="Bodoni MT" size="15.0" />
                      </font>
