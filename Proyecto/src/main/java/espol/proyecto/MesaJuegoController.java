@@ -50,6 +50,8 @@ public class MesaJuegoController {
     
     @FXML
     private VBox pilaJugador;
+    
+    //crear un arrayPilaJugador
 
     @FXML
     private HBox cartasJugador;
@@ -92,7 +94,7 @@ public class MesaJuegoController {
             //siempre se agrega el 0 porque se va eliminando el primer elemento de la lista
             //entonces el indice 0 siempre va a ser diferente
             Carta c = arrayCartasJuegos.get(0);
-            arrayCartasComputador.add(c); // se agrega las cartas a la mesa
+            arrayCartasComputador.add(c); // se agrega las cartas al computador
             
             
             //se crea la imagen de la carta
@@ -105,7 +107,7 @@ public class MesaJuegoController {
                 
                 vbox.getChildren().add(imV);
                 vbox.setAlignment(Pos.CENTER);
-                System.out.println(c.toString());
+                //System.out.println(c.toString());
                 arrayCartasJuegos.remove(c);
             } catch (Exception e){
                 System.out.println("File Not Found");
@@ -115,7 +117,7 @@ public class MesaJuegoController {
             cartasComputadoras.getChildren().add(vbox);
         }
         
-        System.out.println(arrayCartasJuegos);
+        //System.out.println(arrayCartasJuegos);
         
         
         //repartir las cartas a la mesa
@@ -160,8 +162,18 @@ public class MesaJuegoController {
                 //evento al hacer clic una imagen que revisa si hay una carta en la mesa para robar
                 imV.setOnMouseClicked(e -> {
                     System.out.println(c.toString());
+                    
+                    
+                    //con este metodo se comprueba si es que existe una carta en la mesa que se pueda robar
                     if (comprobarMesa(c)){
-                        
+                        System.out.println("Existe una carta igual");
+                        //implementar un metodo que robe la carta
+                        //1. que la quite del array del jugador
+                        //2. que la quite del array de la mesa
+                        //3. ponga la carta en la pila
+                    } else {
+                        System.out.println("No existe una carta igual en la mesa");
+                        //implementar metodo que ponga la carta sobre la mesa debido a que no hay una igual
                     }
                     
                 });
@@ -206,6 +218,8 @@ public class MesaJuegoController {
     
     //metodo actualizar permite que todas las cartas que se encuentren en la partida se actualicen
     
+    
+    //robar pilas
     
     
     class IncrementaCuenta implements Runnable {
