@@ -18,7 +18,13 @@
       <Label layoutX="164.0" layoutY="180.0" text="Mazo de cartas: " textFill="#fffefe" />
       <Label layoutX="149.0" layoutY="254.0" text="Mostrar sugerencias: " textFill="#fff6f6" />
       <CheckBox layoutX="310.0" layoutY="254.0" mnemonicParsing="false" text="Sí" textFill="#fff6f6" />
-      <Button layoutX="164.0" layoutY="304.0" mnemonicParsing="false" text="Aplicar" />
-      <Button fx:id="BackMenu" layoutX="363.0" layoutY="304.0" mnemonicParsing="false" onAction="#switchToMenu2" text="Regresar al menú" />
+      <Button layoutX="164.0" layoutY="304.0" mnemonicParsing="false" style="-fx-background-color: #7E2B19;" text="Aplicar" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT" size="12.0" />
+         </font></Button>
+      <Button fx:id="BackMenu" layoutX="363.0" layoutY="304.0" mnemonicParsing="false" onAction="#switchToMenu2" style="-fx-background-color: #7E2B19;" text="Regresar al menú" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>

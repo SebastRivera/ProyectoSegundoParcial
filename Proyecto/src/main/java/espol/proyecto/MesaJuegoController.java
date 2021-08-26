@@ -35,13 +35,14 @@ public class MesaJuegoController {
     @FXML
     private HBox cartasComputadoras;
     
-    
+    private ArrayList<Carta> pilaComputadora;
     //cartas que se encuentran en la mesa
 
     private ArrayList<Carta> arrayCartasMesa; //arrayList
-
     @FXML
     private HBox CartasMesa;
+    @FXML
+    private ImageView imagenPila;
 
     
     
@@ -71,7 +72,7 @@ public class MesaJuegoController {
         arrayCartasComputador = new ArrayList<>();
         arrayCartasMesa = new ArrayList<>();
         arrayCartasJugador = new ArrayList<>();
-        
+        pilaComputadora= new ArrayList<>();
         
         repartirCartas();
       
@@ -86,14 +87,35 @@ public class MesaJuegoController {
     
     //metodo que agrega las cartas dentro del juego
     public void repartirCartas(){
+        //SOLO DE PRUEBA PARA LA PILA DEL COMPUTADOR
+        int indpila = (int) Math.floor(Math.random()*(52+1));
+        Carta pila= arrayCartasJuegos.get(indpila);
+        pilaComputadora.add(pila);
         System.out.println(arrayCartasJuegos);
+        try(FileInputStream input = new FileInputStream(pila.getImgPath())){
+                
+                Image image = new Image(input,110 ,150, false, false);
+                ImageView imV = new ImageView(image);
+                imagenPila=imV;
+                arrayCartasJuegos.remove(pila);
+            } catch (Exception e){
+                System.out.println("File Not Found");
+                
+            }
+
+            
+        //HASTA AQUI
+        
+        
+        
         //repartir las cartas a la computadora
         for (int i = 0; i<3; i++){
+            int indcarta = (int) Math.floor(Math.random()*(52+1));//Elige una carta al azar
             //se crea un VBox para cada imagen
             VBox vbox = new VBox();
             //siempre se agrega el 0 porque se va eliminando el primer elemento de la lista
             //entonces el indice 0 siempre va a ser diferente
-            Carta c = arrayCartasJuegos.get(0);
+            Carta c = arrayCartasJuegos.get(indcarta);
             arrayCartasComputador.add(c); // se agrega las cartas al computador
             
             
@@ -122,9 +144,10 @@ public class MesaJuegoController {
         
         //repartir las cartas a la mesa
         for (int i = 0; i<4; i++){
+            int indcarta = (int) Math.floor(Math.random()*(52+1));//Elige una carta al azar
             //se crea un VBox para cada imagen
             VBox vbox = new VBox();
-            Carta c = arrayCartasJuegos.get(0);
+            Carta c = arrayCartasJuegos.get(indcarta);
             arrayCartasMesa.add(c); // se agrega las cartas a la mesa
             //se crea la imagen de la carta
             try(FileInputStream input = new FileInputStream(c.getImgPath())){
@@ -146,12 +169,13 @@ public class MesaJuegoController {
         
         //repartir las cartas al jugador
         for (int i = 0; i<3; i++){
+            int indcarta = (int) Math.floor(Math.random()*(52+1));//Elige una carta al azar
             //se crea un VBox para cada imagen
             VBox vbox = new VBox();
             
-            Carta c = arrayCartasJuegos.get(0);
+            Carta c = arrayCartasJuegos.get(indcarta);
             arrayCartasJugador.add(c); // se agrega al mazo del jugador
-            
+            arrayCartasJuegos.remove(c);
             try(FileInputStream input = new FileInputStream(c.getImgPath())){
                 
                 
@@ -171,9 +195,15 @@ public class MesaJuegoController {
                         //1. que la quite del array del jugador
                         //2. que la quite del array de la mesa
                         //3. ponga la carta en la pila
+                        robarCartaMesa(c);
                     } else {
                         System.out.println("No existe una carta igual en la mesa");
                         //implementar metodo que ponga la carta sobre la mesa debido a que no hay una igual
+                    }
+                    if(comprobarPila(c)){
+                        
+                    }else{
+                        System.out.println("No existe pila para robar");
                     }
                     
                 });
@@ -202,7 +232,10 @@ public class MesaJuegoController {
         
         
     }
-    
+    //Comprobar Pila
+    public boolean comprobarPila(Carta c){
+        return true;
+    }
     public boolean comprobarMesa(Carta c){
         for (Carta cMesa: arrayCartasMesa){
             if (cMesa.getValor() == c.getValor()){
@@ -213,7 +246,53 @@ public class MesaJuegoController {
     }
     
     //tomar carta de la mesa
-    
+    public void robarCartaMesa(Carta c){
+        System.out.print(c.getValor());
+        CartasMesa.getChildren().clear();
+        cartasJugador.getChildren().clear();
+        arrayCartasJugador.remove(c);
+        System.out.print(arrayCartasMesa);
+        ArrayList<Carta> Aux= new ArrayList<>();
+        for (Carta x: arrayCartasJugador){
+         VBox vbox= new VBox();
+        try(FileInputStream input = new FileInputStream(x.getImgPath())){
+                Image image = new Image(input,110 ,150, false, false);
+                ImageView imV = new ImageView(image);
+                vbox.getChildren().add(imV);
+                vbox.setAlignment(Pos.CENTER);
+                //ystem.out.println(c.toString());
+                
+            } catch (Exception e){
+                System.out.println("File Not Found");
+                
+            } 
+            cartasJugador.getChildren().add(vbox);
+        }
+        for (Carta y: arrayCartasMesa){
+            if(y.getValor()!=c.getValor()){
+                Aux.add(y);
+            }
+        }
+        System.out.print(Aux);
+        arrayCartasMesa= Aux;
+        System.out.print(arrayCartasMesa);
+        for(Carta z: Aux){
+            VBox vbox= new VBox();
+        try(FileInputStream input = new FileInputStream(z.getImgPath())){
+                Image image = new Image(input,110 ,150, false, false);
+                ImageView imV = new ImageView(image);
+                vbox.getChildren().add(imV);
+                vbox.setAlignment(Pos.CENTER);
+                //ystem.out.println(c.toString());
+                
+            } catch (Exception e){
+                System.out.println("File Not Found");
+                
+            } 
+            CartasMesa.getChildren().add(vbox);
+        }
+        
+    }
     
     
     //metodo actualizar permite que todas las cartas que se encuentren en la partida se actualicen

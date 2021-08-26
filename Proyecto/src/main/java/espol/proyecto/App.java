@@ -56,7 +56,7 @@ public class App extends Application {
             stage.centerOnScreen();
             stage.show();
         } catch (IOException e){
-            System.out.println("File not found");
+            System.out.println("File not found, Error al cargar pantalla");
         }
         
     }
